@@ -12,10 +12,8 @@ public class LoginPage {
     @FindBy(id = "username")
     private WebElement username;
 
-
     @FindBy(id = "password")
     private WebElement password;
-
 
     @FindBy(id = "login-button")
     private WebElement loginButton;
@@ -24,10 +22,9 @@ public class LoginPage {
         this.driver = Mydriver;
     }
 
-
-    public void loginOperation(String uid, String pass) {
-        username.sendKeys(uid);
-        password.sendKeys(pass);
+    public void loginOperation() {
+        username.sendKeys("hychiu3@spireon.com");
+        password.sendKeys("123456");
         loginButton.click();
 
     }

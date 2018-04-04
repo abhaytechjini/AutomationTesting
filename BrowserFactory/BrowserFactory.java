@@ -20,7 +20,6 @@ public class BrowserFactory {
             driver = new InternetExplorerDriver();
         }
 
-
         driver.manage().window().maximize();
         driver.get(url);
 

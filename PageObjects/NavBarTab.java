@@ -3,14 +3,13 @@ package PageObjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-
 public class NavBarTab {
 
     @FindBy(css = "span#mapCardButton-btnInnerEl")
     private WebElement mapButton;
 
     @FindBy(id = "dashboardCardButton")
-    private WebElement dashBoardButton;
+    private WebElement dashboardButton;
 
     @FindBy(id = "reportsCardButton")
     private WebElement reportsButton;
@@ -33,31 +32,30 @@ public class NavBarTab {
     @FindBy(id = "alertsCardButton")
     private WebElement alertsButton;
 
-
     public NavBarTab() {
     }
 
-    public WebElement map() {
+    public WebElement getMap() {
         return mapButton;
     }
 
-    public WebElement dashBoard() {
-        return dashBoardButton;
+    public WebElement getDashBoard() {
+        return dashboardButton;
     }
 
-    public WebElement alerts() {
+    public WebElement getAlerts() {
         return alertsButton;
     }
 
-    public WebElement reports() {
+    public WebElement getReports() {
         return reportsButton;
     }
 
-    public WebElement admin() {
+    public WebElement getAdmin() {
         return adminButton;
     }
 
-    public WebElement compliance() {
+    public WebElement getCompliance() {
         return eldButton;
     }
 
@@ -65,16 +63,15 @@ public class NavBarTab {
         return logo;
     }
 
-    public WebElement checkUsr() {
+    public WebElement getUsername() {
         return username;
     }
 
-
-    public WebElement logout() {
+    public WebElement getlogout() {
         return logout;
     }
 
-    public void logoutOfWebsite() {
+    public void logout() {
         logout.click();
     }
 }

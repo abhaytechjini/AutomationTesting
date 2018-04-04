@@ -125,76 +125,75 @@ public class AlertsPage {
     @FindBy(css = "span#button-1460-btnInnerEl")
     private WebElement viewButtonInSavedAlerts;
 
-
     public AlertsPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public WebElement vehicleAlerts() {
+    public WebElement getVehicleAlerts() {
         return vehicleAlerts;
     }
 
-    public WebElement devicePowerDisconnectAlert() {
+    public WebElement getDevicePowerDisconnectAlert() {
         return devicePowerDisconnectAlert;
     }
 
-    public WebElement hardBreakingAccelerationAlert() {
+    public WebElement getHardBreakingAccelerationAlert() {
         return hardBrakingAndAccelerationAlert;
     }
 
-    public WebElement idleAlert() {
+    public WebElement getIdleAlert() {
         return idleAlert;
     }
 
-    public WebElement input() {
+    public WebElement getInput() {
         return input;
     }
 
-    public WebElement landmarkArrivalDepartureAlert() {
+    public WebElement getLandmarkArrivalDepartureAlert() {
         return landmarkArrivalDepatureAlert;
     }
 
-    public WebElement lowBatteryAlert() {
+    public WebElement getLowBatteryAlert() {
         return lowBatteryAlert;
     }
 
-    public WebElement maintenanceAlertDistance() {
+    public WebElement getMaintenanceAlertDistance() {
         return maintainanceAlertDistance;
     }
 
-    public WebElement maintenanceAlertEngine() {
+    public WebElement getMaintenanceAlertEngine() {
         return maintainanceAlertEngine;
     }
 
-    public WebElement maintenanceAlertTime() {
+    public WebElement getMaintenanceAlertTime() {
         return maintainanceAlertTime;
     }
 
-    public WebElement oddHoursAlert() {
+    public WebElement getOddHoursAlert() {
         return oddHoursAlert;
     }
 
-    public WebElement powerReconnectAlert() {
+    public WebElement getPowerReconnectAlert() {
         return powerReconnectAlert;
     }
 
-    public WebElement speedLimitAlert() {
+    public WebElement getSpeedLimitAlert() {
         return speedLimitAlert;
     }
 
-    public WebElement speedThresholdAlert() {
+    public WebElement getSpeedThresholdAlert() {
         return speedThresholdAlert;
     }
 
-    public WebElement stopAlert() {
+    public WebElement getStopAlert() {
         return stopAlert;
     }
 
-    public WebElement temperatureAlert() {
+    public WebElement getTemperatureAlert() {
         return temperatureAlert;
     }
 
-    public WebElement driverAlerts() {
+    public WebElement getDriverAlerts() {
         return driverAlerts;
     }
 
@@ -204,39 +203,39 @@ public class AlertsPage {
         driverAlerts.click();
     }
 
-    public WebElement hardBrakingAccelerationAlertDriver() {
+    public WebElement getHardBrakingAccelerationAlertDriver() {
         return hardBrakingAccelerationAlertDriver;
     }
 
-    public WebElement idleAlertDriver() {
+    public WebElement getIdleAlertDriver() {
         return idleAlertDriver;
     }
 
-    public WebElement inputAlertDriver() {
+    public WebElement getInputAlertDriver() {
         return inputAlertDriver;
     }
 
-    public WebElement landmarkArrivalDepartureAlertDriver() {
+    public WebElement getLandmarkArrivalDepartureAlertDriver() {
         return landmarkArrivalDepartureAlertDriver;
     }
 
-    public WebElement oddHoursAlertDriver() {
+    public WebElement getOddHoursAlertDriver() {
         return oddHoursAlertDriver;
     }
 
-    public WebElement speedLimitAlertDriver() {
+    public WebElement getSpeedLimitAlertDriver() {
         return speedLimitAlertDriver;
     }
 
-    public WebElement speedThresholdAlertDriver() {
+    public WebElement getSpeedThresholdAlertDriver() {
         return speedThresholdAlertDriver;
     }
 
-    public WebElement stopAlertDriver() {
+    public WebElement getStopAlertDriver() {
         return stopAlertDriver;
     }
 
-    public WebElement alertHistory() {
+    public WebElement getAlertHistory() {
 
         return alertHistory;
     }
@@ -245,33 +244,32 @@ public class AlertsPage {
         alertHistory.click();
     }
 
-
-    public WebElement dateTime() {
+    public WebElement getDateTime() {
 
         return dateTime;
     }
 
-    public WebElement alertTypeInAlertHistory() {
+    public WebElement getAlertTypeInAlertHistory() {
         return alertTypeInAlertHistory;
     }
 
-    public WebElement nameInAlertHistory() {
+    public WebElement getNameInAlertHistory() {
         return nameInAlertHistory;
     }
 
-    public WebElement vehicleInAlertHistory() {
+    public WebElement getVehicleInAlertHistory() {
         return vehicleInAlertHistory;
     }
 
-    public WebElement locationInAlertHistory() {
+    public WebElement getLocationInAlertHistory() {
         return locationInAlertHistory;
     }
 
-    public WebElement detailsInAlertHistory() {
+    public WebElement getDetailsInAlertHistory() {
         return detailsInAlertHistory;
     }
 
-    public WebElement savedAlerts() {
+    public WebElement getSavedAlerts() {
 
         return savedAlerts;
     }
@@ -280,19 +278,19 @@ public class AlertsPage {
         savedAlerts.click();
     }
 
-    public WebElement nameInSavedAlerts() {
+    public WebElement getNameInSavedAlerts() {
         return nameInSavedAlerts;
     }
 
-    public WebElement dateCreatedInSavedAlerts() {
+    public WebElement getDateCreatedInSavedAlerts() {
         return dateCreatedInSavedAlerts;
     }
 
-    public WebElement recipientsInSavedAlerts() {
+    public WebElement getRecipientsInSavedAlerts() {
         return recipientsInSavedAlerts;
     }
 
-    public WebElement viewButtonInSavedAlerts() {
+    public WebElement getViewButtonInSavedAlerts() {
         return viewButtonInSavedAlerts;
     }
 
