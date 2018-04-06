@@ -1,11 +1,17 @@
 package PageObjects;
 
+import Enum.AlertHistoryColumn;
+import Enum.DriverAlertsColumn;
+import Enum.SavedAlertsColumn;
+import Enum.VehicleAlertsColumn;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class AlertsPage {
 
@@ -62,7 +68,7 @@ public class AlertsPage {
     @FindBy(css = "div#alertControl div:nth-child(16) > table > tbody > tr > td")
     private WebElement unauthorisedMovementAlert;
 
-    @FindBy(css = "div#alertControl  div:nth-child(2)> em > button > span.x-tab-inner")
+    @FindBy(css = "div#alertControl div:nth-child(2) div > div> table > tbody > tr > td > span")
     private WebElement driverAlerts;
 
     @FindBy(css = "div#alertControl div:nth-child(2) > div > div:nth-child(1) > table > tbody > tr > td > span")
@@ -124,6 +130,19 @@ public class AlertsPage {
 
     @FindBy(css = "span#button-1460-btnInnerEl")
     private WebElement viewButtonInSavedAlerts;
+
+    @FindBy(css = "div#alertControl div:nth-child(2) > div > div> table > tbody > tr > td > span")
+    private List<WebElement> driverAlertsList;
+
+    @FindBy(css = "div#alertControl div:nth-child(1) > div > div> table > tbody > tr > td > span")
+    private List<WebElement> vehicleAlertsList;
+
+    @FindBy(css = "div#alertCenterTab div.x-tab.x-box-item.x-tab-default.x-active.x-tab-active.x-tab-default-active.x-top-active.x-tab-top-active.x-tab-default-top-active.x-noicon.x-tab-noicon.x-tab-default-noicon.x-top.x-tab-top.x-tab-default-top.x-focus.x-tab-focus.x-tab-default-focus > em > button > span.x-tab-inner")
+    private List<WebElement> alertHistoryTabs;
+
+    @FindBy(css = "div#alertCenterTab div.x-tab.x-box-item.x-tab-default.x-noicon.x-tab-noicon.x-tab-default-noicon.x-top.x-tab-top.x-tab-default-top.x-focus.x-tab-focus.x-tab-default-focus > em > button > span.x-tab-inner")
+    private List<WebElement> savedAlertsTabs;
+
 
     public AlertsPage(WebDriver driver) {
         this.driver = driver;
@@ -294,4 +313,80 @@ public class AlertsPage {
         return viewButtonInSavedAlerts;
     }
 
+    public void vehicleAlertsColumnExists() {
+        int i = 0;
+        boolean chkFlag = false;
+        for (VehicleAlertsColumn column : VehicleAlertsColumn.values()) {
+            String columnTitle = column.toString();
+            WebElement vehicleAlerts = vehicleAlertsList.get(i);
+
+            if (!vehicleAlerts.getText().matches(columnTitle)) {
+                chkFlag = true;
+                System.out.println("Does Not Match " + vehicleAlerts.getText());
+            }
+            i++;
+        }
+
+        if (chkFlag == false) {
+            System.out.println("Everything Matches");
+        }
+    }
+
+    public void driverAlertsColumnExists() {
+        int i = 0;
+        boolean chkFlag = false;
+        for (DriverAlertsColumn column : DriverAlertsColumn.values()) {
+            String columnTitle = column.toString();
+            WebElement driverAlerts = driverAlertsList.get(i);
+
+            if (!driverAlerts.getText().matches(columnTitle)) {
+                chkFlag = true;
+                System.out.println("Does Not Match " + driverAlerts.getText());
+            }
+            i++;
+        }
+
+        if (chkFlag == false) {
+            System.out.println("Everything Matches");
+        }
+    }
+
+
+    public void alertHistoryColumnExists() {
+        int i = 0;
+        boolean chkFlag = false;
+        for (AlertHistoryColumn column : AlertHistoryColumn.values()) {
+            String columnTitle = column.toString();
+            WebElement alertsHistory = alertHistoryTabs.get(i);
+
+            if (!alertsHistory.getText().matches(columnTitle)) {
+                chkFlag = true;
+                System.out.println("Does Not Match " + alertsHistory.getText());
+            }
+            i++;
+        }
+
+        if (chkFlag == false) {
+            System.out.println("Everything Matches");
+        }
+    }
+
+    public void savedAlertsColumnExists() {
+        int i = 0;
+        boolean chkFlag = false;
+        for (SavedAlertsColumn column : SavedAlertsColumn.values()) {
+            String columnTitle = column.toString();
+            WebElement savedAlerts = savedAlertsTabs.get(i);
+
+            if (!savedAlerts.getText().matches(columnTitle)) {
+                chkFlag = true;
+                System.out.println("Does Not Match " + savedAlerts.getText());
+            }
+            i++;
+        }
+
+        if (chkFlag == false) {
+            System.out.println("Everything Matches");
+        }
+    }
 }

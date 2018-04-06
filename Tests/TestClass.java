@@ -18,6 +18,8 @@ public class TestClass {
     // Access URL from chrome
     private static WebDriver driver = BrowserFactory.startbrowser("Chrome", "http://amw1v2localfleet1.stage.spireon.com");
     private NavBarTab navBarTab = PageFactory.initElements(driver, NavBarTab.class);
+    private AlertsPage alertsPage = PageFactory.initElements(driver, AlertsPage.class);
+
 
     @BeforeTest
     public void loginPage() {
@@ -52,7 +54,6 @@ public class TestClass {
         navBarTab.getAlerts().click();
 
         // Validation of elements under vehicle alerts tab
-        AlertsPage alertsPage = PageFactory.initElements(driver, AlertsPage.class);
         Assert.assertTrue(alertsPage.getVehicleAlerts().isDisplayed(), "Vehicle alerts is not present");
         assertTrue(alertsPage.getDevicePowerDisconnectAlert().isDisplayed(), "Device Power disconnect is not present");
         assertTrue(alertsPage.getHardBreakingAccelerationAlert().isDisplayed(), "Hard braking is not present");
@@ -101,7 +102,32 @@ public class TestClass {
         assertTrue(alertsPage.getViewButtonInSavedAlerts().isDisplayed(), "View is not present");
 
         // validation of logout button
-        assertTrue(navBarTab.getlogout().isDisplayed(),"Logout button not present");
+        assertTrue(navBarTab.getlogout().isDisplayed(), "Logout button not present");
+    }
+
+    @Test
+    public void checkVehicleAlerts() {
+        navBarTab.getAlerts().click();
+        alertsPage.getVehicleAlerts().click();
+        alertsPage.vehicleAlertsColumnExists();
+    }
+
+    @Test
+    public void checkDriverAlerts() {
+        alertsPage.getDriverAlerts().click();
+        alertsPage.driverAlertsColumnExists();
+    }
+
+
+    @Test
+    public void checkAlertHistoryColumn() {
+        alertsPage.alertHistoryColumnExists();
+    }
+
+    @Test
+    public void checkSavedAlerts() {
+        alertsPage.clickSavedAlerts();
+        alertsPage.savedAlertsColumnExists();
     }
 
     // logout from website
