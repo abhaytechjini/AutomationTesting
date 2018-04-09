@@ -10,7 +10,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertTrue;
 
 public class TestClass {
@@ -88,8 +87,6 @@ public class TestClass {
         assertTrue(alertsPage.getAlertHistory().isDisplayed(), "Alert History is not present");
         assertTrue(alertsPage.getDateTime().isDisplayed(), "DateTime is not present");
         assertTrue(alertsPage.getAlertTypeInAlertHistory().isDisplayed(), "Alert type not present");
-        assertTrue(alertsPage.getNameInAlertHistory().isDisplayed(), "Name is not present");
-        assertTrue(alertsPage.getVehicleInAlertHistory().isDisplayed(), "Vehicle tab is not present");
         assertTrue(alertsPage.getLocationInAlertHistory().isDisplayed(), "Location is not present");
         assertTrue(alertsPage.getDetailsInAlertHistory().isDisplayed(), "Details is not present");
 
@@ -106,31 +103,17 @@ public class TestClass {
     }
 
     @Test
-    public void checkVehicleAlerts() {
+    public void checkTabs() {
         navBarTab.getAlerts().click();
-        alertsPage.getVehicleAlerts().click();
         alertsPage.vehicleAlertsColumnExists();
-    }
-
-    @Test
-    public void checkDriverAlerts() {
-        alertsPage.getDriverAlerts().click();
+        alertsPage.clickDriverAlerts();
         alertsPage.driverAlertsColumnExists();
-    }
-
-
-    @Test
-    public void checkAlertHistoryColumn() {
         alertsPage.alertHistoryColumnExists();
-    }
-
-    @Test
-    public void checkSavedAlerts() {
         alertsPage.clickSavedAlerts();
         alertsPage.savedAlertsColumnExists();
     }
 
-    // logout from website
+        // logout from website
     @AfterTest
     public void logout() {
         navBarTab.logout();

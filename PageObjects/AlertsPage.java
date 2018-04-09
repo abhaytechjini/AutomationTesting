@@ -4,12 +4,9 @@ import Enum.AlertHistoryColumn;
 import Enum.DriverAlertsColumn;
 import Enum.SavedAlertsColumn;
 import Enum.VehicleAlertsColumn;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -68,7 +65,7 @@ public class AlertsPage {
     @FindBy(css = "div#alertControl div:nth-child(16) > table > tbody > tr > td")
     private WebElement unauthorisedMovementAlert;
 
-    @FindBy(css = "div#alertControl div:nth-child(2) div > div> table > tbody > tr > td > span")
+    @FindBy(css = "div#alertControl  div:nth-child(2)> em > button > span.x-tab-inner")
     private WebElement driverAlerts;
 
     @FindBy(css = "div#alertControl div:nth-child(2) > div > div:nth-child(1) > table > tbody > tr > td > span")
@@ -104,12 +101,6 @@ public class AlertsPage {
     @FindBy(css = "div#eventsGridPanel div:nth-child(2) > div.x-column-header-inner > span")
     private WebElement alertTypeInAlertHistory;
 
-    @FindBy(css = "div#eventsGridPanel div:nth-child(3) > div.x-column-header-inner")
-    private WebElement nameInAlertHistory;
-
-    @FindBy(css = "div#eventsGridPanel div:nth-child(4) > div.x-column-header-inner > span")
-    private WebElement vehicleInAlertHistory;
-
     @FindBy(css = "div#eventsGridPanel div:nth-child(5) > div.x-column-header-inner")
     private WebElement locationInAlertHistory;
 
@@ -131,16 +122,16 @@ public class AlertsPage {
     @FindBy(css = "span#button-1460-btnInnerEl")
     private WebElement viewButtonInSavedAlerts;
 
-    @FindBy(css = "div#alertControl div:nth-child(2) > div > div> table > tbody > tr > td > span")
-    private List<WebElement> driverAlertsList;
-
     @FindBy(css = "div#alertControl div:nth-child(1) > div > div> table > tbody > tr > td > span")
     private List<WebElement> vehicleAlertsList;
 
-    @FindBy(css = "div#alertCenterTab div.x-tab.x-box-item.x-tab-default.x-active.x-tab-active.x-tab-default-active.x-top-active.x-tab-top-active.x-tab-default-top-active.x-noicon.x-tab-noicon.x-tab-default-noicon.x-top.x-tab-top.x-tab-default-top.x-focus.x-tab-focus.x-tab-default-focus > em > button > span.x-tab-inner")
+    @FindBy(css = "div#alertControl div:nth-child(2) > div > div> table > tbody > tr > td > span")
+    private List<WebElement> driverAlertsList;
+
+    @FindBy(css = "tab-1465-btnInnerEl")
     private List<WebElement> alertHistoryTabs;
 
-    @FindBy(css = "div#alertCenterTab div.x-tab.x-box-item.x-tab-default.x-noicon.x-tab-noicon.x-tab-default-noicon.x-top.x-tab-top.x-tab-default-top.x-focus.x-tab-focus.x-tab-default-focus > em > button > span.x-tab-inner")
+    @FindBy(css = "tab-1466-btnInnerEl")
     private List<WebElement> savedAlertsTabs;
 
 
@@ -217,8 +208,6 @@ public class AlertsPage {
     }
 
     public void clickDriverAlerts() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#alertControl  div:nth-child(2)> em > button > span.x-tab-inner")));
         driverAlerts.click();
     }
 
@@ -270,14 +259,6 @@ public class AlertsPage {
 
     public WebElement getAlertTypeInAlertHistory() {
         return alertTypeInAlertHistory;
-    }
-
-    public WebElement getNameInAlertHistory() {
-        return nameInAlertHistory;
-    }
-
-    public WebElement getVehicleInAlertHistory() {
-        return vehicleInAlertHistory;
     }
 
     public WebElement getLocationInAlertHistory() {
@@ -350,7 +331,6 @@ public class AlertsPage {
             System.out.println("Everything Matches");
         }
     }
-
 
     public void alertHistoryColumnExists() {
         int i = 0;

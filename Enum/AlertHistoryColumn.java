@@ -4,8 +4,6 @@ public enum AlertHistoryColumn {
 
     DATETIME("Date / Time"),
     ALERT_TYPE("Alert Type"),
-    NAME("Name"),
-    VEHICLE("Vehicle"),
     LOCATION("Location"),
     DETAILS("Details");
 
